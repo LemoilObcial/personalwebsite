@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12pt;
+  font-family: Verdana, Arial, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #333;
+  color: white;
+  margin: 0;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav .link1 {
+  animation: transitionIn .875s;
+}
+
+nav .link2 {
+  animation: transitionIn 1s;
+}
+
+nav .link3 {
+  animation: transitionIn 1.125s;
+}
+
+nav .link4 {
+  animation: transitionIn 1.25s;
+}
+
+nav .link5 {
+  animation: transitionIn 1.375s;
+}
+
+@keyframes transitionIn2 {
+  from {
+    opacity: 0;
+    transform: translateX(75px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transitionIn3 {
+  from {
+    opacity: 0;
+    transform: translateX(-75px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.txt1 {
+  animation: transitionIn3 .75s;
+}
+
+.txt2 {
+  animation: transitionIn3 1.125s;
+}
+
+.txt3 {
+  animation: transitionIn3 1.25s;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 980px;
+  height: 60px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.links-container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav a {
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+nav a:hover {
+  color: #9370db;
+}
+
+nav .myself-link {
+  margin-right: auto;
+  color: #f2f2f2;
+  align-items: center;
+  padding: 0 20px;
+  animation: transitionIn 0.75s;
+}
+
+nav i {
+  color: #f2f2f2;
+}
+
+nav i:hover {
+  color: #9370db;
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+  display: none;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+}
+
+#column1 {
+  padding: 150px 75px;
+  animation: transitionIn2 .75s;
+}
+
+#column2 {
+  padding: 135px 75px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  border: 5px solid #9370db;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #9370db;
+}
+
+.static-txt {
+  font-size: 25px;
+  font-weight: 400;
+  animation: transitionIn3 .875s;
+}
+
+.dynamic-txts {
+  margin-left: 1px;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+  animation: transitionIn3 1s;
+}
+
+.dynamic-txts li {
+  color: #9370db;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 4s steps(2) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -50px;
+  }
+}
+
+.dynamic-txts li span {
+  position: relative;
+}
+
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border-left: 2px solid #9370db;
+  animation: typing 2s steps(10) infinite;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+.icon a {
+  float: left;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px 15px 20px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  animation: transitionIn3 1.375s;
+}
+
+.icon a:hover {
+  transform: scale(1.25);
+  transition: all 0.25s ease;
+}
+
+@media screen and (max-width:450px) {
+  .links-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+    background-color: #333;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.50s ease-out;
+  }
+
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    width: 360px;
+  }
+  
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: block;
+    padding: 20px;
+  }
+
+  #sidebar-active:checked~.links-container {
+    right: 0;
+  }
+
+  #sidebar-active:checked~#overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  
+  .column {
+    width: 100%;
+    padding: 100px 30px 0 30px;
+  }
+  
+  #column1 {
+    padding: 100px 30px 0 30px;
+  }
+  
+  #column2 {
+    padding: 75px 30px 0 30px;
+  }
+  
+  #menu {
+    animation: transitionIn 0.875s;
+  }
+}
