@@ -41,10 +41,6 @@ nav .link4 {
   animation: transitionIn 1.25s;
 }
 
-nav .link5 {
-  animation: transitionIn 1.375s;
-}
-
 @keyframes transitionIn2 {
   from {
     opacity: 0;
@@ -102,7 +98,7 @@ nav {
 nav a {
   height: 100%;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 35px;
   display: flex;
   align-items: center;
   text-decoration: none;
