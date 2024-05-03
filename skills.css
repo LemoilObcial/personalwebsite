@@ -85,6 +85,10 @@ nav a:hover {
   color: #9370db;
 }
 
+a:is(:link, :active, :visited).active {
+  color: #9370db;
+}
+
 nav .myself-link {
   margin-right: auto;
   color: #f2f2f2;
@@ -125,7 +129,7 @@ nav i:hover {
 #column2, #column3 {
   float: left;
   width: 50%;
-  padding: 40px 70px;
+  padding: 40px 70px 75px 70px;
 }
 
 .skillstxt {
@@ -160,6 +164,14 @@ nav i:hover {
 #icon2:hover {
   transform: scale(1.15);
   transition: all 0.25s ease;
+}
+
+footer {
+  background-color: #333;
+  text-align: center;
+  color: white;
+  height: 60px;
+  animation: transitionIn 1.125s;
 }
 
 @media screen and (max-width:450px) {
@@ -214,9 +226,14 @@ nav i:hover {
     padding: 100px 30px 0px 30px;
   }
   
-  #column2, #column3 {
+  #column2 {
     width: 100%;
     padding: 30px 30px 0px 30px;
+  }
+  
+  #column3 {
+    width: 100%;
+    padding: 30px 30px 60px 30px;
   }
   
   .skillstxt {

@@ -109,6 +109,10 @@ nav a:hover {
   color: #9370db;
 }
 
+a:is(:link, :active, :visited).active {
+  color: #9370db;
+}
+
 nav .myself-link {
   margin-right: auto;
   color: #f2f2f2;
@@ -141,12 +145,12 @@ nav i:hover {
 }
 
 #column1 {
-  padding: 150px 75px;
+  padding: 150px 75px 75px 75px;
   animation: transitionIn2 .75s;
 }
 
 #column2 {
-  padding: 135px 75px;
+  padding: 135px 75px 75px 75px;
 }
 
 /* Clear floats after the columns */
@@ -231,6 +235,14 @@ img {
   transition: all 0.25s ease;
 }
 
+footer {
+  background-color: #333;
+  text-align: center;
+  color: white;
+  height: 60px;
+  animation: transitionIn 1s;
+}
+
 @media screen and (max-width:450px) {
   .links-container {
     flex-direction: column;
@@ -280,7 +292,6 @@ img {
   
   .column {
     width: 100%;
-    padding: 100px 30px 0 30px;
   }
   
   #column1 {
@@ -288,7 +299,7 @@ img {
   }
   
   #column2 {
-    padding: 75px 30px 0 30px;
+    padding: 50px 30px 60px 30px;
   }
   
   #menu {

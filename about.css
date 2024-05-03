@@ -97,6 +97,10 @@ nav a:hover {
   color: #9370db;
 }
 
+a:is(:link, :active, :visited).active {
+  color: #9370db;
+}
+
 nav .myself-link {
   margin-right: auto;
   color: #f2f2f2;
@@ -129,13 +133,14 @@ nav i:hover {
 }
 
 #column1 {
-  padding: 175px 75px;
+  padding: 175px 75px 75px 75px;
   animation: transitionIn2 .75s;
 }
 
 #column2 {
   padding-top: 120px;
   padding-left: 40px;
+  padding-bottom: 75px;
   animation: transitionIn3 .75s;
 }
 
@@ -175,6 +180,14 @@ img {
   color: #9370db;
   transform: translateY(-5px);
   transition: all 0.25s ease;
+}
+
+footer {
+  background-color: #333;
+  text-align: center;
+  color: white;
+  height: 60px;
+  animation: transitionIn 1s;
 }
 
 @media screen and (max-width:450px) {
@@ -226,7 +239,6 @@ img {
   
   .column {
     width: 100%;
-    padding: 100px 30px 0 30px;
   }
   
   .aboutmetxt {
@@ -238,7 +250,7 @@ img {
 }
 
   #column2 {
-   padding: 50px 30px 0 30px;
+   padding: 50px 30px 60px 30px;
  }
  
  #menu {
