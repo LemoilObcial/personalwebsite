@@ -67,14 +67,16 @@ nav .link4 {
 
 .txt1 {
   animation: transitionIn3 .75s;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .txt2 {
-  animation: transitionIn3 1.125s;
+  animation: transitionIn3 1s;
 }
 
 .txt3 {
-  animation: transitionIn3 1.25s;
+  animation: transitionIn3 1.125s;
 }
 
 nav {
@@ -166,55 +168,63 @@ img {
   box-shadow: 0 0 25px #9370db;
 }
 
-.static-txt {
+.animated-text {
   font-size: 25px;
-  font-weight: 400;
+  font-weight: 450;
   animation: transitionIn3 .875s;
 }
 
-.dynamic-txts {
-  margin-left: 1px;
-  height: 25px;
-  line-height: 25px;
-  overflow: hidden;
-  animation: transitionIn3 1s;
-}
-
-.dynamic-txts li {
-  color: #9370db;
-  list-style: none;
-  font-size: 20px;
-  font-weight: 500;
+.animated-text span {
   position: relative;
-  top: 0;
-  animation: slide 4s steps(2) infinite;
 }
 
-@keyframes slide {
-  100% {
-    top: -50px;
+.animated-text span::before {
+  content: "Web Developer";
+  color: #9370db;
+  animation: words 20s infinite;
+}
+
+.animated-text span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: #333;
+  border-left: 2px solid #9370db;
+  right: -8px;
+  animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to{
+    border-left: 2px solid #9370db00;
   }
 }
 
-.dynamic-txts li span {
-  position: relative;
-}
-
-.dynamic-txts li span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #333;
-  border-left: 2px solid #9370db;
-  animation: typing 2s steps(10) infinite;
+@keyframes words {
+  0%,20%{
+    content: "Web Developer";
+  }
+  21%,40%{
+    content: "Software Engineer";
+  }
+  41%,60%{
+    content: "Web Designer";
+  }
+  61%,80%{
+    content: "Software Developer";
+  }
+  81%,100%{
+    content: "Game Developer";
+  }
 }
 
 @keyframes typing {
-  100% {
-    left: 100%;
-    margin: 0 -35px 0 35px;
+  10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+    width: 0;
+  }
+  5%,20%,25%,40%,45%,60%,65%,80%,85%{
+    width: calc(100% + 8px);
   }
 }
 
@@ -227,7 +237,7 @@ img {
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  animation: transitionIn3 1.375s;
+  animation: transitionIn3 1.25s;
 }
 
 .icon a:hover {
